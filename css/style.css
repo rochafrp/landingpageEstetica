@@ -491,9 +491,6 @@ footer {
     .background-right {
         flex: 120%;
     }
-    .content {
-        left: 15%;
-    }
     .social a {
         border: 2px solid #D8B192;
         background: #fff;
