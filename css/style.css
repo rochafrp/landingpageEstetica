@@ -491,6 +491,14 @@ footer {
     .background-right {
         flex: 120%;
     }
+    .content {
+        left: 15%;
+    }
+    .social a {
+        border: 2px solid #D8B192;
+        background: #fff;
+        color: #D8B192;
+    }
     nav {
         padding: 10px 20px 10px 20px;
     }
