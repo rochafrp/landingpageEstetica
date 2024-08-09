@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0 0;
+    padding: 0;
     max-width: 100%;
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
@@ -15,26 +15,20 @@ body {
     padding: 0 15px;
 }
 
-/* Seção de Home */
 .hero {
     display: flex;
     position: relative;
     width: 100%;
     height: 100vh; /* Ocupa a altura total da tela */
+    overflow: hidden; /* Evita overflow horizontal */
 }
 
-.background-left {
-    flex: 55%; /* 55% da tela */
-    background-size: cover;
-    background-position: center;
-
-}
-
+.background-left,
 .background-right {
-    flex: 45%; /* 45% da tela */
+    flex: 1; /* Ajusta para preencher o espaço disponível */
     background-size: cover;
     background-position: center;
-
+    background-repeat: no-repeat; /* Evita repetição de imagem */
 }
 
 .background-left {
@@ -42,20 +36,20 @@ body {
 }
 
 .background-right {
-    background-image: url('../img/imagem-direita.png'); /* Opcional, se quiser uma imagem de fundo também à direita */
+    background-image: url('../img/imagem-direita.png');
 }
 
 .background-center {
     position: absolute;
-    top: 60%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta o posicionamento para o centro exato */
-    width: 350px; /* Ajuste a largura conforme necessário */
-    height: 350px; /* Ajuste a altura conforme necessário */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Garante que a imagem geométrica fique sobre as outras partes */
+    z-index: 1;
 }
 
 .geometric-image {
@@ -65,12 +59,12 @@ body {
 }
 
 .logo {
-    width: 100px; /* Define a largura da imagem */
-    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    width: 100px;
+    height: auto;
     cursor: pointer;
 }
+
 span {
-    margin-left: 60px;
     color: #000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -81,22 +75,25 @@ nav {
     left: 0;
     width: 100%;
     background: none;
-    padding: 10px 60px 10px 20px;
-    z-index: 2; /* Garante que o nav fique sobre o background */
+    padding: 10px 20px;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 nav ul {
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 nav ul li {
     padding: 10px 25px;
 }
-nav ul li a{
+
+nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -104,40 +101,46 @@ nav ul li a{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     transition: 0.4s;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     transform: scale(1.2);
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
+
 .content {
     position: absolute;
     top: 50%;
     left: 8%;
     transform: translateY(-50%);
     z-index: 2;
-      
 }
+
 h1 {
     color: #D8B192;
     margin: 20px 0;
     font-size: 75px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
 h3 {
     color: #000;
     font-size: 25px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
 h4 {
     color: #000;
     letter-spacing: 2px;
     font-size: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
 .social {
     display: flex;
     justify-content: center;
 }
+
 .social a {
     width: 45px;
     height: 45px;
@@ -146,12 +149,13 @@ h4 {
     justify-content: center;
     background: #D8B192;
     border-radius: 50%;
-    margin: 0px 10px;
+    margin: 0 10px;
     color: white;
     text-decoration: none;
     font-size: 20px;
     transition: .5s;
 }
+
 .social a:hover {
     transform: scale(1.3);
     color: #D8B192;
@@ -159,7 +163,7 @@ h4 {
     border: 2px solid #D8B192;
     cursor: pointer;
 }
-/* Seção de Sobre */
+
 .about {
     width: 100%;
     padding: 80px 0;
@@ -175,6 +179,7 @@ h4 {
 .about-text {
     width: 100%;
     max-width: 450px;
+    margin: 0 auto;
 }
 .main {
     width: 100%;
@@ -193,12 +198,6 @@ h4 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.about-text span{
-    margin-left: 60px;
-    color: #000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
 .about-text h5 {
     color: white;
     letter-spacing: 2px;
@@ -206,6 +205,7 @@ h4 {
     margin-bottom: 25px;
     text-transform: capitalize;
 }
+
 .about-text p {
     color: #000;
     letter-spacing: 1px;
@@ -213,30 +213,33 @@ h4 {
     font-size: 18px;
     margin-bottom: 45px;
 }
+
 .about-text a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #fff; /* Cor de fundo do botão */
+    background-color: #fff;
     color: #000;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 .about-text a:hover {
     background-color: #000;
     color: #fff;
     cursor: pointer;
     box-shadow: 4px 4px 8px #000000;
 }
-/* Seção de Serviços */
+
 .servicos {
     padding: 60px 0;
-    background-color: #fff; /* Cor de fundo de backup */
-    background-image: url('../img/background_servicos.png'); /* Caminho para a sua imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a área da seção */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    position: relative; /* Necessário para o z-index funcionar no texto */
+    background-color: #fff;
+    background-image: url('../img/background_servicos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden; /* Evita overflow horizontal */
 }
 
 .servicos::before {
@@ -252,81 +255,88 @@ h4 {
 .servicos .main {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+    justify-content: space-evenly;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px; /* Espaçamento lateral */
+    padding: 0 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
 }
 
 .servicos-text {
-    width: 50%; /* A largura do texto, ajuste conforme necessário */
+    width: 100%;
+    max-width: 50%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .servicos-text h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #D8B192; /* Cor do título */
+    color: #D8B192;
 }
 
 .servicos-text h2 span {
-    color: #987A3C; /* Destaque para o texto */
+    color: #987A3C;
 }
 
 .servicos-text p {
     font-size: 16px;
     line-height: 1.6;
-    color: #666; /* Cor do texto */
+    color: #666;
     margin-bottom: 20px;
 }
 
 .servicos img {
-    width: 45%; /* Largura da imagem, ajuste conforme necessário */
+    width: 35%;
+    max-width: 45%;
     height: auto;
-    border-radius: 10px; /* Adiciona cantos arredondados à imagem */
+    border-radius: 10px;
 }
 
 /* Seção de Overlay */
 
 .full-screen-image {
-    background-image: url('../img/botao_intagram.png'); /* Caminho da sua imagem */
-    background-size: cover; /* Faz a imagem cobrir toda a área da seção */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    min-height: 600px; /* Ajuste para corresponder ao tamanho da seção .contato */
+    background-image: url('../img/botao_intagram.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 0 auto; /* Remove margens laterais */
-    padding: 50px 0; /* Adiciona um padding para corresponder ao padding da seção .contato */
+    margin: 0 auto;
+    padding: 50px 0;
+    overflow: hidden; /* Evita overflow horizontal */
 }
 
 .overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ajusta a largura da sobreposição */
-    height: 100%; /* Ajusta a altura da sobreposição */
+    width: 100%;
+    height: 100%;
 }
 
 .center-button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px 150px;
+    padding: 40px 80px;
     background-color: #fff;
     color: #D8B192;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 25px;
     border-radius: 5px;
     transition: background-color 0.3s;
     text-align: center;
 }
 
 .center-button i {
-    font-size: 30px; /* Tamanho do ícone */
-    margin-bottom: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .center-button:hover {
@@ -335,28 +345,30 @@ h4 {
     box-shadow: 4px 4px 8px #000000;
 }
 
-/* Seção de Contato */
 .contato {
     padding: 50px 0;
-    background-color: #fff; /* Cor de fundo de backup */
-    background-image: url('../img/background_contato.png'); /* Caminho para a sua imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a área da seção */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-color: #fff;
+    background-image: url('../img/background_contato.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
+    overflow: hidden; /* Evita overflow horizontal */
 }
 
 .main-contato {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
 }
 
 .main-contato img {
-    width: 45%; /* Imagem ocupa metade da área */
+    width: 100%;
+    max-width: 45%;
     border-radius: 10px 0 0 10px;
 }
 
@@ -402,10 +414,9 @@ h4 {
     box-shadow: 2px 4px 4px 4px #D8B192;
 }
 
-/* Rodapé */
 footer {
-    background-color: #D8B192; /* Cor de fundo do rodapé */
-    color: #fff; /* Cor do texto no rodapé */
+    background-color: #D8B192;
+    color: #fff;
     padding: 10px 0;
 }
 
@@ -468,7 +479,7 @@ footer {
     justify-content: center;
     background: #fff;
     border-radius: 50%;
-    margin: 0px 10px;
+    margin: 0 10px;
     color: #D8B192;
     text-decoration: none;
     font-size: 20px;
@@ -483,18 +494,22 @@ footer {
     cursor: pointer;
 }
 
+
 /* Media Queries para telas muito pequenas */
 @media (max-width: 768px) {
     .background-center {
         display: none;
     }
     .background-right {
-        flex: 120%;
+        flex: 150px;
     }
     .social a {
         border: 2px solid #D8B192;
         background: #fff;
         color: #D8B192;
+    }
+    .content {
+        left: 14%;
     }
     nav {
         padding: 10px 20px 10px 20px;
@@ -511,21 +526,21 @@ footer {
     .about-text {
         text-align: center;
     }
-
-    .servicos {
-        padding: 40px 0; /* Ajusta o padding */
+    span {
+        margin-left: auto;
+        color: #000;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
-
+    .servicos .main {
+        flex-direction: column;
+    }
     .servicos-text {
-        width: 100%; /* Faz o texto ocupar toda a largura */
-        padding: 10px;
+        max-width: none;
     }
-
     .servicos img {
-        width: 100%; /* Faz a imagem ocupar toda a largura */
-        height: auto;
+        max-width: none;
+        width: 80%;
     }
-
     .full-screen-image {
         min-height: 400px; /* Ajusta a altura mínima */
         padding: 20px; /* Ajusta o padding */
@@ -540,9 +555,35 @@ footer {
         padding: 20px;
         text-align: center;
     }
-
+    .contato-text h2 {
+        font-size: 26px;
+    }
     .main-contato img {
-        width: 100%; /* Faz a imagem ocupar toda a largura */
-        border-radius: 0;
+        display: none;
+    }
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .col-3, .col-6 {
+        flex: 0 0 auto;
+        max-width: none;
+        width: auto;
+        margin: 10px; /* Espaçamento entre os elementos */
+        text-align: center; /* Centraliza o texto dentro da coluna */
+    }
+
+    .logo-footer {
+        display: none;
+    }
+    .container-texto-footer,
+    .container-redes-footer {
+        justify-content: center;
     }
 }
