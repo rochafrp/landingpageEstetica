@@ -1,3 +1,3 @@
-# Portfolio
+# LandPage de Estética
 
-https://rochafrp.github.io/landpage-trabalho/
+https://rochafrp.github.io/landpageEstetica/
