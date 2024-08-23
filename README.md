@@ -1,3 +1,3 @@
 # LandPage de Estética
 
-https://rochafrp.github.io/landpageEstetica/
+https://rochafrp.github.io/landingpageEstetica
